@@ -929,9 +929,9 @@ version = "0.1.0"
 dependencies = [
  "android_logger",
  "eframe",
+ "egui-winit",
  "egui_demo_lib",
  "log",
- "winit",
 ]
 
 [[package]]

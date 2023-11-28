@@ -14,5 +14,8 @@ android_logger = "0.13"
 eframe = { version = "0.24", features = [ "wgpu", "android-native-activity" ] }
 egui_demo_lib = "0.24"
 
-# Must be same version used by eframe.
-winit = { version = "0.28.7", features = [ "android-native-activity" ] }
+# Used to get same winit used by eframe.
+egui-winit = { version = "0.24", default-features = false, features = [
+        "clipboard",
+        "links",
+] }
