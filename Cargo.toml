@@ -5,10 +5,14 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+crate_type=["cdylib"]
+
 [dependencies]
 log = "0.4"
 android_logger = "0.13"
-android-activity = { version="0.5", features = [ "native-activity" ] }
+eframe = { version = "0.24", features = [ "wgpu", "android-native-activity" ] }
+egui_demo_lib = "0.24"
 
-[lib]
-crate_type=["cdylib"]
+# Must be same version used by eframe.
+winit = { version = "0.28.7", features = [ "android-native-activity" ] }
