@@ -3,6 +3,8 @@
 This is my attempt at getting latest version of the
 [`egui`](https://github.com/emilk/egui) demo to work on Android.
 
+Optimized for size the resulting `egui-android-demo.aab` is 2.4M.
+
 Built using [`xbuild`](https://github.com/rust-mobile/xbuild)
 
 ## Building

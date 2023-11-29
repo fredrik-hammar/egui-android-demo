@@ -8,14 +8,34 @@ edition = "2021"
 [lib]
 crate_type=["cdylib"]
 
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"  # Optimize for size.
+lto = true
+codegen-units = 1
+
 [dependencies]
 log = "0.4"
-android_logger = "0.13"
-eframe = { version = "0.24", features = [ "wgpu", "android-native-activity" ] }
 egui_demo_lib = "0.24"
 
+[dependencies.android_logger]
+version = "0.13"
+default-features = false
+
+[dependencies.eframe]
+version = "0.24"
+default-features = false
+features = [
+    "wgpu",
+    "android-native-activity",
+    "default_fonts",
+]
+
 # Used to get same winit used by eframe.
-egui-winit = { version = "0.24", default-features = false, features = [
-        "clipboard",
-        "links",
-] }
+[dependencies.egui-winit]
+version = "0.24"
+default-features = false
+features = [
+    "clipboard",
+    "links",
+]
