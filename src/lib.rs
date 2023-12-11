@@ -1,11 +1,12 @@
-use eframe::egui;
-use egui_winit::winit;
+use eframe::{egui, NativeOptions};
 
+#[cfg(target_os = "android")]
+use egui_winit::winit;
 #[cfg(target_os = "android")]
 #[no_mangle]
 fn android_main(app: winit::platform::android::activity::AndroidApp) {
-    use eframe::{NativeOptions, Renderer};
     use winit::platform::android::EventLoopBuilderExtAndroid;
+    use eframe::Renderer;
 
     std::env::set_var("RUST_BACKTRACE", "full");
     android_logger::init_once(android_logger::Config::default().with_max_level(log::LevelFilter::Info));
@@ -17,16 +18,22 @@ fn android_main(app: winit::platform::android::activity::AndroidApp) {
         renderer: Renderer::Wgpu,
         ..Default::default()
     };
-    eframe::run_native(
-        "egui-android-demo",
-        options,
-        Box::new(|_cc| Box::<DemoApp>::default()),
-    ).unwrap();
+    DemoApp::run(options).unwrap();
 }
 
 #[derive(Default)]
-struct DemoApp {
+pub struct DemoApp {
     demo_windows: egui_demo_lib::DemoWindows,
+}
+
+impl DemoApp {
+    pub fn run(options: NativeOptions) -> Result<(), eframe::Error> {
+        eframe::run_native(
+            "egui-android-demo",
+            options,
+            Box::new(|_cc| Box::<DemoApp>::default()),
+        )
+    }
 }
 
 impl eframe::App for DemoApp {
