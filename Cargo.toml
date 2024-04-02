@@ -27,7 +27,7 @@ version = "0.13"
 default-features = false
 
 [target.'cfg(target_os = "android")'.dependencies.eframe]
-version = "0.26"
+version = "0.27"
 default-features = false
 features = [
     "wgpu",
