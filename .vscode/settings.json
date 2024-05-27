@@ -3,7 +3,8 @@
         "eframe",
         "egui",
         "Wgpu",
-        "winit"
+        "winit",
+        "xbuild"
     ],
     "rust-analyzer.cargo.target": "aarch64-linux-android"
 }
