@@ -31,7 +31,7 @@ impl DemoApp {
         eframe::run_native(
             "egui-android-demo",
             options,
-            Box::new(|_cc| Box::<DemoApp>::default()),
+            Box::new(|_cc| Ok(Box::<DemoApp>::default())),
         )
     }
 }
