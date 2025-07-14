@@ -19,7 +19,7 @@ log = "0.4"
 egui_demo_lib = "0.31"
 
 [target.'cfg(not(target_os = "android"))'.dependencies.eframe]
-version = "0.31"
+version = "0.32"
 default-features = true
 
 [target.'cfg(target_os = "android")'.dependencies.android_logger]
