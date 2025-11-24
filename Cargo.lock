@@ -880,6 +880,7 @@ dependencies = [
  "egui-winit",
  "egui_demo_lib",
  "log",
+ "wgpu",
 ]
 
 [[package]]

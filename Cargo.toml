@@ -35,6 +35,13 @@ features = [
     "default_fonts",
 ]
 
+[target.'cfg(target_os = "android")'.dependencies.wgpu]
+version = "27"
+default-features = false
+features = [
+    "gles",
+]
+
 # Used to get same winit used by eframe.
 [target.'cfg(target_os = "android")'.dependencies.egui-winit]
 version = "0.33"
