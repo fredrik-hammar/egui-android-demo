@@ -30,20 +30,9 @@ default-features = false
 version = "0.34"
 default-features = false
 features = [
-    "wgpu",
+    "glow",
     "android-native-activity",
     "default_fonts",
-]
-
-[target.'cfg(target_os = "android")'.dependencies.wgpu]
-# Version must match eframe dependency in order to override features.
-# "*" will cause cargo update to skip to newer versions if available.
-# Override must be done because eframe does not enable usable Android
-# backends.
-version = "29"
-default-features = false
-features = [
-    "gles",
 ]
 
 # Used to get same winit used by eframe.
