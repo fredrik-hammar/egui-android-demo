@@ -40,7 +40,7 @@ features = [
 # "*" will cause cargo update to skip to newer versions if available.
 # Override must be done because eframe does not enable usable Android
 # backends.
-version = "27"
+version = "*"
 default-features = false
 features = [
     "gles",

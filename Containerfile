@@ -27,4 +27,10 @@ RUN --mount=type=cache,target=/egui-android-demo/target \
     --mount=type=cache,target=/usr/local/cargo/git/db \
     --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/root/.cache/x \
+    <<-EOF
+    set -ex
     x build --arch arm64 --platform android
+
+    echo "wgpu dependency deduplicated check"
+    checks/wgpu-dedup.sh --verbose
+EOF
