@@ -18,6 +18,8 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
+    # Build with container image to avoid slow tool installs into the
+    # GitHub runner itself and with integrated caching to speed up rebuilds.
     - name: Build Docker Image
       uses: docker/build-push-action@v6
       with:
