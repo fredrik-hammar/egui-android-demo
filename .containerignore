@@ -1,2 +1,4 @@
+Containerfile
+.containerignore
 .git
 target
