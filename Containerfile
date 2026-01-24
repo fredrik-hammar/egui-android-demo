@@ -1,4 +1,4 @@
-FROM rust:1.92
+FROM rust:1.93
 
 LABEL org.opencontainers.image.source \
       https://github.com/fredrik-hammar/egui-android-demo
