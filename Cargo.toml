@@ -48,7 +48,7 @@ features = [
 
 # Used to get same winit used by eframe.
 [target.'cfg(target_os = "android")'.dependencies.egui-winit]
-version = "0.34"
+version = "0.35"
 default-features = false
 features = [
     "clipboard",
