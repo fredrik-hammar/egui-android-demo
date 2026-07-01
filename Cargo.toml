@@ -16,10 +16,10 @@ codegen-units = 1
 
 [dependencies]
 log = "0.4"
-egui_demo_lib = "0.34"
+egui_demo_lib = "0.35"
 
 [target.'cfg(not(target_os = "android"))'.dependencies.eframe]
-version = "0.34"
+version = "0.35"
 default-features = true
 
 [target.'cfg(target_os = "android")'.dependencies.android_logger]
@@ -27,7 +27,7 @@ version = "0.15"
 default-features = false
 
 [target.'cfg(target_os = "android")'.dependencies.eframe]
-version = "0.34"
+version = "0.35"
 default-features = false
 features = [
     "wgpu",
@@ -48,7 +48,7 @@ features = [
 
 # Used to get same winit used by eframe.
 [target.'cfg(target_os = "android")'.dependencies.egui-winit]
-version = "0.34"
+version = "0.35"
 default-features = false
 features = [
     "clipboard",
